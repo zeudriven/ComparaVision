@@ -1,0 +1,13 @@
+@echo off
+echo Installing dependencies...
+call npm install
+
+echo Installing Supabase CLI...
+call npm install -g supabase
+
+echo Initializing Supabase...
+call npx supabase init
+call npx supabase start
+
+echo Setup complete! Starting development server...
+call npm start

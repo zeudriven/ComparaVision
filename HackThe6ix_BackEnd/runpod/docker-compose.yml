@@ -1,0 +1,47 @@
+# Docker Compose for RunPod Vision Benchmark
+version: '3.8'
+
+services:
+  vision-benchmark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: runpod-vision-benchmark
+    ports:
+      - "8000:8000"
+    environment:
+      - RUNPOD_API_KEY=${RUNPOD_API_KEY:-your_runpod_api_key_here}
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./logs:/app/logs
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import runpod; print('Health OK')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Optional: Redis for job queuing (if needed for scaling)
+  redis:
+    image: redis:7-alpine
+    container_name: runpod-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+volumes:
+  redis_data:

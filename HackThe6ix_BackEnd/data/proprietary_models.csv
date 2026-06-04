@@ -1,0 +1,4 @@
+id,org_id,name,version,file_path,size_mb,vellum_deployment_id,created_at,updated_at
+b1234567-89ab-4cde-b123-456789abcdef,d0dc6b6c-7ea1-4df0-8595-7c773b86bd72,CustomBERT v1,1.0,/models/custom-bert-v1,420,vellum-custom-bert-1,2024-01-01T00:00:00Z,2024-01-01T00:00:00Z
+c2345678-9abc-5def-c234-56789abcdef0,d0dc6b6c-7ea1-4df0-8595-7c773b86bd72,CustomGPT v2,2.0,/models/custom-gpt-v2,680,vellum-custom-gpt-2,2024-01-01T00:00:00Z,2024-01-01T00:00:00Z
+d3456789-abcd-6ef0-d345-6789abcdef01,e1ed7c7d-8fb2-4ef1-9696-8d884b86ce73,FastLLM,1.1,/models/fast-llm,380,vellum-fast-llm,2024-01-01T00:00:00Z,2024-01-01T00:00:00Z

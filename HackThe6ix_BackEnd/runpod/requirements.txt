@@ -1,0 +1,27 @@
+# RunPod Vision Benchmark Requirements
+runpod==1.5.1
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+pillow>=10.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+psutil>=5.9.0
+transformers>=4.30.0
+timm>=0.9.0
+detectron2 @ git+https://github.com/facebookresearch/detectron2.git
+codecarbon>=2.2.0
+requests>=2.31.0
+aiohttp>=3.8.0
+fastapi>=0.100.0
+uvicorn>=0.23.0
+python-multipart>=0.0.6
+motor>=3.2.0
+pymongo>=4.4.0
+redis>=4.6.0
+celery>=5.3.0
+psycopg2-binary>=2.9.0
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
